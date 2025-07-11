@@ -1,0 +1,6 @@
+E:\work\recegame\Recegame\Recegame\obj\Debug\Recegame.csproj.AssemblyReference.cache
+E:\work\recegame\Recegame\Recegame\obj\Debug\Recegame.csproj.SuggestedBindingRedirects.cache
+E:\work\recegame\Recegame\Recegame\obj\Debug\Recegame.MainForm.resources
+E:\work\recegame\Recegame\Recegame\obj\Debug\Recegame.Properties.Resources.resources
+E:\work\recegame\Recegame\Recegame\obj\Debug\Recegame.csproj.GenerateResource.cache
+E:\work\recegame\Recegame\Recegame\obj\Debug\Recegame.csproj.CoreCompileInputs.cache

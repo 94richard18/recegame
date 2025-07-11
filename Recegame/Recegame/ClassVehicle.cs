@@ -16,12 +16,17 @@ namespace Recegame
         public int CC;  
         public decimal price; 
 
-        public string Start()
+        public string StartEngine()
         {
             return $"引擎啟動";
         }
+        public string Stop()
+        {
+            return "引擎停止";
+        }
+        abstract public string Run();
 
-        abstract public string run();
+        abstract public string Turbo();
 
     }
 }

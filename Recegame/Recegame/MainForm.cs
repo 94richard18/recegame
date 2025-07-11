@@ -21,5 +21,15 @@ namespace Recegame
         {
 
         }
+
+        private void Stop_Button_Click(object sender, EventArgs e)
+        {
+            Status_TextBox.Text = Stop();
+        }
+
+        private void Start_Botton_Click(object sender, EventArgs e)
+        {
+            Status_TextBox.Text = StartEngine();
+        }
     }
 }
