@@ -10,11 +10,10 @@ namespace Recegame
     {
 
     }
-    public class Car
+    abstract class Car
     {
-        public string model; 
-        public int CC;  
-        public decimal price; 
+        public int Place;
+        private static Random _sharedRandom = new Random();
 
         public string StartEngine()
         {
@@ -24,9 +23,47 @@ namespace Recegame
         {
             return "引擎停止";
         }
-       // abstract public string Run();
+        protected int GetRandomStep(int min, int max)
+        {
+            return _sharedRandom.Next(min, max);
+        }
+        abstract public int Run();
 
-        //abstract public string Turbo();
+        abstract public int Turbo();
 
+    }
+
+    class Batmobile : Car 
+    {
+        Random RandomStep = new Random();
+        int turbo;
+        public override int Run()
+        {
+            int RunStep = GetRandomStep(1, 10);
+            return RunStep;
+        }
+
+        public override int Turbo() 
+        {
+            int turbo = 10;
+            return turbo;
+        }
+    }
+
+    class Beetle : Car
+    {
+        Random RandomStep = new Random();
+        int turbo;
+        public override int Run()
+        {
+            int RunStep = GetRandomStep(1, 10);
+            return RunStep;
+        }
+
+        public override int Turbo()
+        {
+            int turbo = 5;
+            return turbo;
+        }
     }
 }
