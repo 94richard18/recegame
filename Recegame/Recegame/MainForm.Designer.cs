@@ -38,6 +38,8 @@
             this.batmoblie_label = new System.Windows.Forms.Label();
             this.beetle_label = new System.Windows.Forms.Label();
             this.Attack_button = new System.Windows.Forms.Button();
+            this.BatmobileSkill_TextBox = new System.Windows.Forms.RichTextBox();
+            this.BeetleSkill_TextBox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // Start_Botton
@@ -64,7 +66,7 @@
             // 
             this.BatmobileStatus_TextBox.Location = new System.Drawing.Point(71, 46);
             this.BatmobileStatus_TextBox.Name = "BatmobileStatus_TextBox";
-            this.BatmobileStatus_TextBox.Size = new System.Drawing.Size(246, 309);
+            this.BatmobileStatus_TextBox.Size = new System.Drawing.Size(246, 209);
             this.BatmobileStatus_TextBox.TabIndex = 2;
             this.BatmobileStatus_TextBox.Text = "";
             // 
@@ -72,7 +74,7 @@
             // 
             this.BeetleStatus_TextBox.Location = new System.Drawing.Point(406, 46);
             this.BeetleStatus_TextBox.Name = "BeetleStatus_TextBox";
-            this.BeetleStatus_TextBox.Size = new System.Drawing.Size(246, 309);
+            this.BeetleStatus_TextBox.Size = new System.Drawing.Size(246, 209);
             this.BeetleStatus_TextBox.TabIndex = 3;
             this.BeetleStatus_TextBox.Text = "";
             // 
@@ -123,11 +125,29 @@
             this.Attack_button.UseVisualStyleBackColor = true;
             this.Attack_button.Click += new System.EventHandler(this.Attack_button_Click);
             // 
+            // BatmobileSkill_TextBox
+            // 
+            this.BatmobileSkill_TextBox.Location = new System.Drawing.Point(71, 261);
+            this.BatmobileSkill_TextBox.Name = "BatmobileSkill_TextBox";
+            this.BatmobileSkill_TextBox.Size = new System.Drawing.Size(246, 177);
+            this.BatmobileSkill_TextBox.TabIndex = 9;
+            this.BatmobileSkill_TextBox.Text = "";
+            // 
+            // BeetleSkill_TextBox
+            // 
+            this.BeetleSkill_TextBox.Location = new System.Drawing.Point(406, 261);
+            this.BeetleSkill_TextBox.Name = "BeetleSkill_TextBox";
+            this.BeetleSkill_TextBox.Size = new System.Drawing.Size(246, 177);
+            this.BeetleSkill_TextBox.TabIndex = 10;
+            this.BeetleSkill_TextBox.Text = "";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BeetleSkill_TextBox);
+            this.Controls.Add(this.BatmobileSkill_TextBox);
             this.Controls.Add(this.Attack_button);
             this.Controls.Add(this.beetle_label);
             this.Controls.Add(this.batmoblie_label);
@@ -155,6 +175,8 @@
         private System.Windows.Forms.Label batmoblie_label;
         private System.Windows.Forms.Label beetle_label;
         private System.Windows.Forms.Button Attack_button;
+        private System.Windows.Forms.RichTextBox BatmobileSkill_TextBox;
+        private System.Windows.Forms.RichTextBox BeetleSkill_TextBox;
     }
 }
 

@@ -26,7 +26,7 @@ namespace Recegame
         abstract public int Run();
 
         abstract public int Turbo();
-        public string WeakPoint(int backwardStep)
+        public void WeakPoint(int backwardStep)
         {
             Step -= backwardStep;
 
@@ -34,8 +34,9 @@ namespace Recegame
             {
                 Step = 0;
             }
-            return $"受到攻擊！後退 {backwardStep} 步。目前位置: {Step}";
+           
         }
+        public abstract string SpecialSkill(Car targetCar);
     }
 
     class Batmobile : Car 
@@ -54,6 +55,13 @@ namespace Recegame
             int turbo = 10;
             return turbo;
         }
+
+        public override string SpecialSkill(Car targetCar)
+        {
+            int backwardAmount = GetRandomStep(5, 15);
+            
+            return $"蝙蝠車使用音波衝擊！對手後退了 {backwardAmount} 格";
+        }
     }
 
     class Beetle : Car
@@ -71,6 +79,12 @@ namespace Recegame
         {
             int turbo = 5;
             return turbo;
+        }
+        public override string SpecialSkill(Car targetCar)
+        {
+            int Move = GetRandomStep(5, 15);
+            Step += Move;
+            return $"金龜車使用衝刺！衝刺了 {Move} 格";
         }
     }
 }

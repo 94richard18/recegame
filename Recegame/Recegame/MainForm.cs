@@ -17,6 +17,7 @@ namespace Recegame
         private Batmobile batmobile = new Batmobile();
         private Beetle beetle = new Beetle();
         private static Random AttackRandom = new Random();
+        private static Random SkillRandom = new Random();
         public MainForm()
         {
             InitializeComponent();
@@ -53,6 +54,14 @@ namespace Recegame
                 BatmobileStatus_TextBox.Text = $"{batmobile.Step}/100";
                 BeetleStatus_TextBox.Text = $"{beetle.Step}/100";
 
+                if (SkillRandom.Next(0,2)==0)
+                {
+                    BatmobileSkill_TextBox.Text = batmobile.SpecialSkill(beetle);
+                }
+                else
+                {
+                    BeetleSkill_TextBox.Text = beetle.SpecialSkill(beetle);
+                }
                 await Task.Delay(1000);  
             }
 
@@ -78,12 +87,12 @@ namespace Recegame
             if (WhoBeAttack == 0) 
             {
                 
-                BatmobileStatus_TextBox.Text = batmobile.WeakPoint(1);
+                batmobile.WeakPoint(1);
             }
             else 
             {
 
-                BeetleStatus_TextBox.Text = beetle.WeakPoint(1);
+                beetle.WeakPoint(1);
             }
         }
     }
