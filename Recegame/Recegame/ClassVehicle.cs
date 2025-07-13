@@ -6,13 +6,9 @@ using System.Threading.Tasks;
 
 namespace Recegame
 {
-    internal class ClassVehicle
-    {
-
-    }
     abstract class Car
     {
-        public int Place;
+        public int Step { set; get; }
         private static Random _sharedRandom = new Random();
 
         public string StartEngine()
@@ -30,7 +26,16 @@ namespace Recegame
         abstract public int Run();
 
         abstract public int Turbo();
+        public string WeakPoint(int backwardStep)
+        {
+            Step -= backwardStep;
 
+            if (Step < 0)
+            {
+                Step = 0;
+            }
+            return $"受到攻擊！後退 {backwardStep} 步。目前位置: {Step}";
+        }
     }
 
     class Batmobile : Car 
@@ -40,7 +45,8 @@ namespace Recegame
         public override int Run()
         {
             int RunStep = GetRandomStep(1, 10);
-            return RunStep;
+            Step += RunStep;
+            return Step;
         }
 
         public override int Turbo() 
@@ -57,7 +63,8 @@ namespace Recegame
         public override int Run()
         {
             int RunStep = GetRandomStep(1, 10);
-            return RunStep;
+            Step += RunStep;
+            return Step;
         }
 
         public override int Turbo()

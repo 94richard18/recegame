@@ -16,12 +16,12 @@ namespace Recegame
     {
         private Batmobile batmobile = new Batmobile();
         private Beetle beetle = new Beetle();
-
+        private static Random AttackRandom = new Random();
         public MainForm()
         {
             InitializeComponent();
-            batmobile.Place = 0;
-            beetle.Place = 0;
+            batmobile.Step = 0;
+            beetle.Step = 0;
             
         }
 
@@ -42,47 +42,49 @@ namespace Recegame
             BeetleStatus_TextBox.Text = batmobile.StartEngine();
 
         }
-        /*
-        private void gamestart_button_Click(object sender, EventArgs e)
-        {
-            do
-            {
-                batmobile.Place += batmobile.Run();
-                beetle.Place += batmobile.Run();
-                BatmobileStatus_TextBox.Text = $"{batmobile.Place}/100";
-                BeetleStatus_TextBox.Text = $"{beetle.Place}/100";
-                System.Threading.Thread.Sleep(1000);
-            } while (batmobile.Place<=100 && beetle.Place<100);
 
-
-        }
-        */
         private async void gamestart_button_Click(object sender, EventArgs e)
         {
-            while (batmobile.Place <= 100 && beetle.Place < 100)
+            while (batmobile.Step <= 100 && beetle.Step < 100)
             {
-                batmobile.Place += batmobile.Run();
-                beetle.Place += beetle.Run();
+                batmobile.Run();
+                beetle.Run();
 
-                BatmobileStatus_TextBox.Text = $"{batmobile.Place}/100";
-                BeetleStatus_TextBox.Text = $"{beetle.Place}/100";
+                BatmobileStatus_TextBox.Text = $"{batmobile.Step}/100";
+                BeetleStatus_TextBox.Text = $"{beetle.Step}/100";
 
-                await Task.Delay(1000);  // 非同步等待1秒，不會卡住 UI 執行緒
+                await Task.Delay(1000);  
             }
 
-            if (batmobile.Place >= 100 && beetle.Place < 100)
+            if (batmobile.Step >= 100 && beetle.Step < 100)
             {
                 MessageBox.Show("蝙蝠車獲勝！", "比賽結果");
             }
-            else if (beetle.Place >= 100 && batmobile.Place < 100)
+            else if (beetle.Step >= 100 && batmobile.Step < 100)
             {
                 MessageBox.Show("金龜車獲勝！", "比賽結果");
             }
-            else if (batmobile.Place >= 100 && beetle.Place >= 100)
+            else if (batmobile.Step >= 100 && beetle.Step >= 100)
             {
-                MessageBox.Show("平手！兩輛車都到達終點！", "比賽結果");
+                MessageBox.Show("平手！", "比賽結果");
             }
         }
 
+        private void Attack_button_Click(object sender, EventArgs e)
+        {
+
+            int WhoBeAttack = AttackRandom.Next(0, 2); 
+
+            if (WhoBeAttack == 0) 
+            {
+                
+                BatmobileStatus_TextBox.Text = batmobile.WeakPoint(1);
+            }
+            else 
+            {
+
+                BeetleStatus_TextBox.Text = beetle.WeakPoint(1);
+            }
+        }
     }
 }
