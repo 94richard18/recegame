@@ -10,7 +10,7 @@ namespace Recegame
     {
 
     }
-    abstract class Car
+    public class Car
     {
         public string model; 
         public int CC;  
@@ -18,15 +18,15 @@ namespace Recegame
 
         public string StartEngine()
         {
-            return $"引擎啟動";
+            return "引擎啟動";
         }
         public string Stop()
         {
             return "引擎停止";
         }
-        abstract public string Run();
+       // abstract public string Run();
 
-        abstract public string Turbo();
+        //abstract public string Turbo();
 
     }
 }

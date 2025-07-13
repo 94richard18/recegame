@@ -4,3 +4,8 @@ E:\work\recegame\Recegame\Recegame\obj\Debug\Recegame.MainForm.resources
 E:\work\recegame\Recegame\Recegame\obj\Debug\Recegame.Properties.Resources.resources
 E:\work\recegame\Recegame\Recegame\obj\Debug\Recegame.csproj.GenerateResource.cache
 E:\work\recegame\Recegame\Recegame\obj\Debug\Recegame.csproj.CoreCompileInputs.cache
+E:\work\recegame\Recegame\Recegame\bin\Debug\Recegame.exe.config
+E:\work\recegame\Recegame\Recegame\bin\Debug\Recegame.exe
+E:\work\recegame\Recegame\Recegame\bin\Debug\Recegame.pdb
+E:\work\recegame\Recegame\Recegame\obj\Debug\Recegame.exe
+E:\work\recegame\Recegame\Recegame\obj\Debug\Recegame.pdb
